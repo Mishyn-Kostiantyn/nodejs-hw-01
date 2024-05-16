@@ -11,7 +11,7 @@ const generateContacts = async (number) => {
          newContacts.push(createFakeContact());
     };
     let allContacts=oldContacts.concat(newContacts);
-    try { await fs.writeFile(PATH_DB, JSON.stringify(allContacts)); console.log('Контакти записано!'); } catch (error) { console.log('Помилка запису контактів', error); }
+    try { await fs.writeFile(PATH_DB, JSON.stringify(allContacts)); console.log(`Додано контактів：${number} `); } catch (error) { console.log('Помилка запису контактів', error); }
         finally {
         console.log("Загальна кількість контактів:", allContacts.length);
     }
